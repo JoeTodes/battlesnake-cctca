@@ -21,8 +21,8 @@ function info() {
   return {
     apiversion: "1",
     author: "",       // TODO: Your Battlesnake Username
-    color: "#888888", // TODO: Choose color
-    head: "default",  // TODO: Choose head
+    color: "#ff0000", // TODO: Choose color
+    head: "beluga",  // TODO: Choose head
     tail: "default",  // TODO: Choose tail
   };
 }
@@ -66,6 +66,7 @@ function move(gameState) {
     isMoveSafe.up = false;
   }
 
+
   // TODO: Step 1 - Prevent your Battlesnake from moving out of bounds
   // boardWidth = gameState.board.width;
   // boardHeight = gameState.board.height;
@@ -82,6 +83,8 @@ function move(gameState) {
     console.log(`MOVE ${gameState.turn}: No safe moves detected! Moving down`);
     return { move: "down" };
   }
+
+
 
   // Choose a random move from the safe moves
   const nextMove = safeMoves[Math.floor(Math.random() * safeMoves.length)];
